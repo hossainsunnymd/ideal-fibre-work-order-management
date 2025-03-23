@@ -33,9 +33,7 @@ class UserController extends Controller
                 $request->session()->put('role',$count->role);
                 $data=['message'=>'User login Successfully','status'=>true,'error'=>''];
                if($count->role=='superadmin' || $count->role=='admin'){
-                return redirect('/dashboard-page')->with( $data);
-               }else{
-                return redirect('/moderator-dashboard')->with($data);
+                return redirect('/invoice-page')->with( $data);
                }
 
            }else{

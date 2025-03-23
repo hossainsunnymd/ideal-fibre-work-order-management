@@ -95,7 +95,10 @@ window.location.reload();
             <!-- Scrollable Invoice Content -->
             <div id="print-invoice" class="max-h-[400px] overflow-y-auto">
 
-
+                <div class="flex justify-between items-center mb-4">
+                    <h1 class="text-xl font-bold">Invoice Details</h1>
+                    <img class="h-[90px]" src="../../Assets/img/logo.jpg" alt="Logo" />
+                </div>
 
                 <div v-for="(item, i) in props.items" :key="i" class="print-page-break">
 

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('total_work_order');
             $table->string('created_by');
             $table->decimal('total',15,2);
-            $table->date('delivery_date');
-            $table->string('delivery_place');
+            $table->date('delivery_date')->nullable();
+            $table->string('delivery_place')->nullable();
             $table->text('note')->nullable();
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')

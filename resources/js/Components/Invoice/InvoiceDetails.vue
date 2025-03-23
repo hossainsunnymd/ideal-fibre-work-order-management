@@ -97,10 +97,10 @@ const formatDate = (date) => {
                         <p>Note: {{ props.customer.note }}</p>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 flex justify-between items-end p-6">
-                        <p class="border-t border-black">Prepared By: </p>
-                        <p class="border-t border-black">Checked By: </p>
-                        <p class="border-t border-black">Received By: </p>
-                        <p class="border-t border-black">Authorized By: </p>
+                        <p class="border-t border-black">Prepared By </p>
+                        <p class="border-t border-black">Checked By </p>
+                        <p class="border-t border-black">Received By </p>
+                        <p class="border-t border-black">Authorized By </p>
                     </div>
                 </div>
             </div>

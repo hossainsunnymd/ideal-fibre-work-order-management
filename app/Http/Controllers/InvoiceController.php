@@ -66,7 +66,7 @@ class InvoiceController extends Controller
             $toDate = date('Y-m-d', strtotime($request->toDate));
             $query->where('customer_id', '=', $request->customerId)->whereDate('created_at', '>=', $fromDate)->whereDate('created_at', '<=', $toDate);
         })->with('customer', 'invoiceProducts.product')
-
+            ->latest()
             ->get();
 
         $total = Invoice::when($request->query('fromDate') && $request->query('toDate'), function ($query) use ($request) {

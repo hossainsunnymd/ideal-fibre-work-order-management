@@ -15,8 +15,8 @@ use Inertia\Inertia;
 class DashboardController extends Controller
 {
     public function salePage(Request $request){
-        $customers=Customer::get();
-        $products=Product::get();
+        $customers=Customer::latest()->get();
+        $products=Product::latest()->get();
         return Inertia::render('Sale/SalePage',['customers'=>$customers,'products'=>$products]);
     }
 

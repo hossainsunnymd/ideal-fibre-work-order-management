@@ -17,14 +17,12 @@ class SessionAuthenticateMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $email=$request->session()->get('email','default');
-        $user_id=$request->session()->get('user_id','default');
-        $count=User::where('email','=',$email)->where('id','=',$user_id)->count();
+        $count=User::where('email','=',$email)->count();
         if($email=="default" || $count==0){
             return redirect('/');
         }
         else{
             $request->headers->set('email',$email);
-            $request->headers->set('id',$user_id);
             return $next($request);
         }
 

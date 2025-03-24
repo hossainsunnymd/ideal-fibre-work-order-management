@@ -19,9 +19,15 @@ const items = ref(page.props.customers);
 const deleteCustomer = (id) => {
     if (confirm("Are you sure you want to delete this customer?")) {
         router.get(`/delete-customer?id=${id}`);
-        // toaster.success("Customer deleted successfully");
     }
 };
+
+if(page.props.flash.status===true){
+    toaster.success(page.props.flash.message);
+
+}else if(page.props.flash.status===false){
+    toaster.error(page.props.flash.message);
+}
 </script>
 
 <template>
@@ -50,7 +56,7 @@ const deleteCustomer = (id) => {
                     Edit
                 </Link>
                 <button
-                    @click="deleteCustomer(name)"
+                    @click="deleteCustomer(id)"
                     class="bg-red-500 ml-1 text-white py-2 px-4 rounded"
                 >
                     Delete

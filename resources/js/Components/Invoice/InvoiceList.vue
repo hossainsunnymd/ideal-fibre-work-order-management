@@ -68,7 +68,7 @@ const formatDate = (date) => {
 </script>
 
 <template>
-  <div class="p-4 bg-[#f8f8f8] overflow-auto">
+  <div class="p-4 bg-[#f8f8f8] ">
     <h1 class="text-2xl font-bold mb-4">Work Order List / Invoices</h1>
     <InvoiceDetails v-model:show="show" :customer="customer" />
     <InvoiceDetailsList v-model:show="detail" :items="items" />
@@ -101,7 +101,7 @@ const formatDate = (date) => {
     </div>
 
 
-    <div class="overflow-x-auto">
+    <div class="p-4 bg-[#f8f8f8]">
       <EasyDataTable
         buttons-pagination
         alternating
@@ -109,7 +109,7 @@ const formatDate = (date) => {
         :items="items"
         :search-value="searchValue"
         :search-field="searchField"
-        :rows-per-page="50"
+        :rows-per-page="20"
       >
         <template #item-action="{ id }">
           <button class="btn btn-outline-dark text-sm px-3 py-1 btn-sm m-1" @click="showDetails(id)">

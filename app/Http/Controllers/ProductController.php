@@ -50,7 +50,7 @@ class ProductController extends Controller
             Product::create($data);
             return redirect()->route('productSavePage')->with(['status'=>true,'message'=>'Product created successfully'],200);
          }catch(Exception $e){
-            return redirect()->route('productSavePage')->with(['status'=>false,'message'=>$e->getMessage()],200);
+            return redirect()->route('productSavePage')->with(['status'=>false,'message'=>'Something went wrong'],200);
          }
 
     }

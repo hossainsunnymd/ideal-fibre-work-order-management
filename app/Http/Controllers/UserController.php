@@ -28,6 +28,7 @@ class UserController extends Controller
            if($count != null && Hash::check($request->password,$count->password)){
 
                 $request->session()->put('email',$count->email);
+                $request->session()->put('user_id',$count->id);
                 $request->session()->put('name',$count->name);
                 $request->session()->put('role',$count->role);
                 $data=['message'=>'User login Successfully','status'=>true,'error'=>''];

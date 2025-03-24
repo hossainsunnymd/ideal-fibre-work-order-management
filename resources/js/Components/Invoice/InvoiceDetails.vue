@@ -45,7 +45,7 @@ const formatDate = (date) => {
         >
 
 
-            <div id="print-invoice">
+            <div id="print-invoice" class="max-h-[600px] overflow-y-auto">
                 <div class="flex justify-between items-center mb-4">
                     <h1 class="text-xl font-bold">Invoice Details</h1>
                     <img class="h-[90px]" src="../../Assets/img/logo.jpg" alt="Logo" />
